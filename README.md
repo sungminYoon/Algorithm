@@ -1,7 +1,4 @@
-# Algorithm
- Algorithm_arumi
- 
- 
+![3](https://user-images.githubusercontent.com/19296155/148867315-1fdb9f6e-80eb-4d73-ae48-dd620ed43e28.png)
  
  결과
 
