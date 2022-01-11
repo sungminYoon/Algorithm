@@ -1,9 +1,10 @@
-CODE PATH -> Algorithm/ArumiProject/arumi.py   
-
 """   
 Created by SungMin Yoon on 2020/03/02..   
 Copyright (c) 2020 year SungMin Yoon. All rights reserved.   
 """   
+
+CODE PATH: Arumi -> Algorithm/ArumiProject/arumi.py   
+CODE PATH: C_Language_Filter_window -> Algorithm/ArumiProject/C_Language_Filter_window
    
 ![3](https://user-images.githubusercontent.com/19296155/148867315-1fdb9f6e-80eb-4d73-ae48-dd620ed43e28.png)
  
