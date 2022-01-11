@@ -1,0 +1,72 @@
+//
+// Created by SungMin Yoon on 2017. 10. 23..
+// Copyright @ 2017년 SungMin Yoon. All rights reserved.
+//
+
+* Data Verification
+* reference -> https://docs.scipy.org/doc/numpy/reference/generated/numpy.blackman.html & /numpy.hanning.html & /numpy.hamming.html
+* The results obtained from the above sources were compared. Trust and write.
+* Thank you.
+
+#include <math.h>
+#define PI 3.141592   /* pi */
+
+
+/*
+ FIR Lowpass 필터 입니다.
+ */
+
+void ALlowpass(int order, float * coefficients, float cutoff, float sampleRate){
+
+  // 기각역(critical region)
+  float wl = (2.0f * PI) * (cutoff / sampleRate);
+  int s = order/2;
+  for (int i = 0; i<=order; i++) {
+
+    if (s == i) {
+      coefficients[i] = wl / PI;
+      coefficients[i+1] = wl / PI;
+    }else if (s > i) {
+      coefficients[i] = sinf(wl*(i-s)) / (PI*(i-s));
+    }else{
+      int j = order-i;
+      coefficients[i-1] = coefficients[j];
+    }
+  }
+}
+
+/*
+ FIR Highpass 필터 입니다.
+ */
+
+void ALhighpass(int order, float * coefficients, float cutoff, float sampleRate){
+
+  // 에너지의 실용 단위 (watt-hour)
+  float wh = (2.0f * PI) * (cutoff / sampleRate);
+
+  // 기각역(critical region)
+  float wl = PI - wh;
+  int s = order/2;
+
+  for (int i = 0; i<=order; i++) {
+    if (s == i) {
+      coefficients[i] = wl / PI;
+      coefficients[i+1] = wl / PI;
+    }else if (s > i) {
+      coefficients[i] = sinf(wl*(i-s)) / (PI*(i-s));
+    }else{
+      int j = order-i;
+      coefficients[i-1] = coefficients[j];
+    }
+  }
+}
+
+/*
+ FIR Bandpass 필터 입니다.
+ */
+
+void ALbandpass(int order, float * coefficients, float * lowCoefficients, float * highCoefficients){
+  for (int i =0; i < order; i ++) {
+    coefficients[i] = 4 * (lowCoefficients[i] * highCoefficients[i]);
+  }
+}
