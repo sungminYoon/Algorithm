@@ -1,10 +1,10 @@
 CODE PATH -> Algorithm/ArumiProject/arumi.py   
 
-"""
-Created by SungMin Yoon on 2020/03/02..
-Copyright (c) 2020 year SungMin Yoon. All rights reserved.
-"""
-
+"""   
+Created by SungMin Yoon on 2020/03/02..   
+Copyright (c) 2020 year SungMin Yoon. All rights reserved.   
+"""   
+   
 ![3](https://user-images.githubusercontent.com/19296155/148867315-1fdb9f6e-80eb-4d73-ae48-dd620ed43e28.png)
  
  결과
